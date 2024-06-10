@@ -12,11 +12,7 @@ datasetsTabUI <- function(id) {
        tabPanel("GBIF Taxonomy",
                 downloadButton(ns("download_gbif_taxonomy"), "Download"),
                 hr(),
-                DT::dataTableOutput(ns("dataset_gbif_taxonomy"))),
-       tabPanel("Fungal Traits",
-                downloadButton(ns("download_fungal_traits"), "Download"),
-                hr(),
-                DT::dataTableOutput(ns("dataset_fungal_traits")))
+                DT::dataTableOutput(ns("dataset_gbif_taxonomy")))
     )
   )
 }
@@ -53,20 +49,6 @@ datasetsTabServer <- function(id, transect, species) {
         },
         content = function(file) {
           write.csv(gbif_taxon_df, file, row.names = FALSE)
-        }
-      )
-
-      # Fungal Traits
-      #
-      fungal_traits_df <- get_fungal_traits_data(transect, species)
-      output$dataset_fungal_traits <- DT::renderDataTable({ fungal_traits_df },
-                                              options = list(scrollX = TRUE))
-      output$download_fungal_traits <- downloadHandler(
-        filename = function() {
-          paste("mycopins_genus_traits_", transect, "_", species, "_", Sys.Date(), ".csv", sep="")
-        },
-        content = function(file) {
-          write.csv(fungal_traits_df, file, row.names = FALSE)
         }
       )
 

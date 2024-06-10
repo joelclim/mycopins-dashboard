@@ -15,7 +15,7 @@ source("datasets_tab.R")
 server = shinyServer(function(input, output, session) {
   pwd <- readBin("pwd.dat", "character", n=file.info("pwd.dat")$size)
 
-  logged_in <- reactiveVal(TRUE)
+  logged_in <- reactiveVal(FALSE)
   observeEvent(input$login, {
     if (logged_in() == FALSE) {
       showModal(modalDialog(

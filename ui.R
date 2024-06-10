@@ -26,8 +26,7 @@ ui <- dashboardPage(
       selectInput("transect", label = "Transect: ", choices = NULL),
       selectInput("species", label = "Species: ",
                   choices = list("All" = 1,
-                                 "Fungi" = 2,
-                                 "Wood Saprotroph Fungi" = 3),
+                                 "Fungi" = 2),
                   selected = 2),
       sidebarMenuOutput("menuItems")
     )
