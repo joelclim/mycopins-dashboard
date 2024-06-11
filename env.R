@@ -54,14 +54,14 @@ get_environment_variables <- function(transect, species,
 }
 
 
-get_gbif_taxon_data <- function(transect, species) {
+get_organism_dataset <- function(transect, species) {
   if (1 == species) {
-    gbif_taxon_file <- paste0("./data/", transect, "/mycopins_gbif_taxon.csv")
+    organisms_file <- paste0("./data/", transect, "/mycopins_organisms.csv")
   } else if (2 == species) { # genus/species
-    gbif_taxon_file <- paste0("./data/", transect, "/mycopins_gbif_taxon_fungi.csv")
+    organisms_file <- paste0("./data/", transect, "/mycopins_organisms_fungi.csv")
   }
 
-  gbif_taxon_df <- read_csv(gbif_taxon_file, show_col_types = FALSE)
+  organisms_df <- read_csv(organisms_file, show_col_types = FALSE)
 
-  return(gbif_taxon_df)
+  return(organisms_df)
 }

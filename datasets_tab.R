@@ -9,10 +9,10 @@ datasetsTabUI <- function(id) {
                 downloadButton(ns("download_counts"), "Download"),
                 hr(),
                 DT::dataTableOutput(ns("dataset_counts"))),
-       tabPanel("GBIF Taxonomy",
-                downloadButton(ns("download_gbif_taxonomy"), "Download"),
+       tabPanel("Organisms",
+                downloadButton(ns("download_organisms"), "Download"),
                 hr(),
-                DT::dataTableOutput(ns("dataset_gbif_taxonomy")))
+                DT::dataTableOutput(ns("dataset_organisms")))
     )
   )
 }
@@ -38,17 +38,17 @@ datasetsTabServer <- function(id, transect, species) {
         }
       )
 
-      # GBIF Taxonomy
+      # Organisms
       #
-      gbif_taxon_df <- get_gbif_taxon_data(transect, species)
-      output$dataset_gbif_taxonomy <- DT::renderDataTable({ gbif_taxon_df },
+      organisms_df <- get_organism_dataset(transect, species)
+      output$dataset_organisms <- DT::renderDataTable({ organisms_df },
                                               options = list(scrollX = TRUE))
-      output$download_gbif_taxonomy <- downloadHandler(
+      output$download_organisms <- downloadHandler(
         filename = function() {
-          paste("mycopins_gbif_taxon_", transect, "_", species, "_", Sys.Date(), ".csv", sep="")
+          paste("mycopins_organisms_", transect, "_", species, "_", Sys.Date(), ".csv", sep="")
         },
         content = function(file) {
-          write.csv(gbif_taxon_df, file, row.names = FALSE)
+          write.csv(organisms_df, file, row.names = FALSE)
         }
       )
 
