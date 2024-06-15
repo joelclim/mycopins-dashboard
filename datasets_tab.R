@@ -5,7 +5,7 @@ datasetsTabUI <- function(id) {
   ns <- NS(id)
   tabItem(tabName = "datasets",
     navbarPage(title = "Datasets",
-       tabPanel("Counts",
+       tabPanel("Presence-Absence",
                 downloadButton(ns("download_counts"), "Download"),
                 hr(),
                 DT::dataTableOutput(ns("dataset_counts"))),
