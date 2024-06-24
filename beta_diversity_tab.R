@@ -41,9 +41,28 @@ betaDiversityTabUI <- function(id) {
           mainPanel(
             titlePanel(tags$h3("Non-metric multidimensional scaling (NMDS)",
                               style = "text-align: center;")),
+            column(width = 12,
+              tags$button(class = "btn btn-primary",
+                          "data-toggle" = "collapse",
+                          "data-target" = "#intro-ordination",
+                          "Show Introduction"),
+              tags$div(id = "intro-ordination",
+                      class = "collapse",
+                      includeMarkdown("./docs/ordination.md"))
+            ),
             htmlOutput(ns("plot_label")),
             plotOutput(ns("nmds_plot"), width = "640px", heigh = "480px"),
+            br(), br(),
             htmlOutput(ns("ano_label")),
+            column(width = 12,
+              tags$button(class = "btn btn-primary",
+                          "data-toggle" = "collapse",
+                          "data-target" = "#intro-anosim",
+                          "Show Introduction"),
+              tags$div(id = "intro-anosim",
+                      class = "collapse",
+                      includeMarkdown("./docs/analysis_of_similarities.md"))
+            ),
             verbatimTextOutput(ns("nmds_ano"))
           )
         )
@@ -65,6 +84,16 @@ betaDiversityTabUI <- function(id) {
             titlePanel(tags$h3(
               "Permutational Multivariate Analysis of Variance (PERMANOVA)",
                               style = "text-align: center;")),
+            column(width = 12,
+              tags$button(class = "btn btn-primary",
+                          "data-toggle" = "collapse",
+                          "data-target" = "#intro-permanova",
+                          "Show Introduction"),
+              tags$div(id = "intro-permanova",
+                      class = "collapse",
+                      includeMarkdown("./docs/permanova.md")),
+              hr()
+            ),
             DT::dataTableOutput(ns("permanova")),
             conditionalPanel("input.show_model_formula==1",
                             h4("Model Formula"),

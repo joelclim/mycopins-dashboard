@@ -1,0 +1,1 @@
+Species richness is a measure of biodiversity that quantifies the number of different species present in an ecological community, landscape, or region. It is one of the simplest and most intuitive indices of biodiversity, focusing solely on the count of species without considering the abundance of each species.

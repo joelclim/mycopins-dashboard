@@ -16,9 +16,21 @@ alphaDiversityTabUI <- function(id) {
                         label = "Environment Variable: ",
                         choices = NULL)),
           mainPanel(
+            titlePanel(tags$h3("Species Richness", style = "text-align: center;")),
+            column(width = 12,
+              tags$button(class = "btn btn-primary",
+                          "data-toggle" = "collapse",
+                          "data-target" = "#intro-species-richness",
+                          "Show Introduction"),
+              tags$div(id = "intro-species-richness",
+                      class = "collapse",
+                      includeMarkdown("./docs/species_richness.md")),
+              hr(),
+            ),
+            DT::dataTableOutput(ns("species_richness_summary")),
             plotOutput(ns("species_richness_plot"),
-                       width = "640px", heigh = "480px"),
-            DT::dataTableOutput(ns("species_richness_summary")))
+                       width = "640px", heigh = "480px")
+          )
         )
       ),
       tabPanel("Diversity Index",
@@ -33,6 +45,17 @@ alphaDiversityTabUI <- function(id) {
                         label = "Environment Variable: ",
                         choices = NULL)),
           mainPanel(
+            titlePanel(tags$h3("Diversity Index", style = "text-align: center;")),
+            column(width = 12,
+              tags$button(class = "btn btn-primary",
+                          "data-toggle" = "collapse",
+                          "data-target" = "#intro-diversity-index",
+                          "Show Introduction"),
+              tags$div(id = "intro-diversity-index",
+                      class = "collapse",
+                      includeMarkdown("./docs/diversity_index.md"))
+            ),
+            br(),
             plotOutput(ns("alpha_diversity_plot"),
                       width = "640px", heigh = "480px"))
         )

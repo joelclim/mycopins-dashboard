@@ -49,6 +49,15 @@ indicatorSpeciesTabUI <- function(id) {
         titlePanel(
           tags$h3("Indicator Species Analysis", style = "text-align: center;")
         ),
+        column(width = 12,
+          tags$button(class = "btn btn-primary",
+                      "data-toggle" = "collapse",
+                      "data-target" = "#intro-isa",
+                      "Show Introduction"),
+          tags$div(id = "intro-isa",
+                  class = "collapse",
+                  includeMarkdown("./docs/indicator_species_analysis.md"))
+        ),
         DT::dataTableOutput(ns("indicator_values"))
       )
     )
