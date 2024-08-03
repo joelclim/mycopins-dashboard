@@ -1,16 +1,8 @@
 # References
 
-1. Clemmensen KE, Ihrmark K, Durling MB, Lindahl BD (2016) Sample preparation for fungal community analysis by high-throughput sequencing of barcode amplicons. Methods in Molecular Biology (Clifton, N.J. ) 1399: 61–88. 
-2. Garnier, Simon, Ross, Noam, Rudis, Robert, Camargo, Pedro A, Sciaini, Marco, Scherer, Cédric (2024). viridis(Lite) - Colorblind-Friendly Color Maps for R. doi:10.5281/zenodo.4679423, viridis package version 0.6.5, https://sjmgarnier.github.io/viridis/.
-3. Oksanen J, Simpson G, Blanchet F, Kindt R, Legendre P, Minchin P, O'Hara R, Solymos P, Stevens
-  M, Szoecs E, Wagner H, Barbour M, Bedward M, Bolker B, Borcard D, Carvalho G, Chirico M, De
-  Caceres M, Durand S, Evangelista H, FitzJohn R, Friendly M, Furneaux B, Hannigan G, Hill M,
-  Lahti L, McGlinn D, Ouellette M, Ribeiro Cunha E, Smith T, Stier A, Ter Braak C, Weedon J
-  (2024). _vegan: Community Ecology Package_. R package version 2.6-5,
-  <https://github.com/vegandevs/vegan>.
-4. Palmer JM, Jusino MA, Banik MT, Lindner DL (2018) Non-biological synthetic spike-in controls and the AMPtk software pipeline improve mycobiome data. PeerJ 6: e4925. 
-5. Roberts DW (2023). _labdsv: Ordination and Multivariate Analysis for Ecology_. R
-  package version 2.1-0, <https://CRAN.R-project.org/package=labdsv>.
-6. Shumskaya M, Lorusso N, Patel U, Leigh M, Somervuo P, Schigel D (2023) MycoPins: a metabarcoding-based method to monitor fungal colonization of fine woody debris. MycoKeys 96: 77-95. 
-7. SCATA pipeline: https://scata.mykopat.slu.se/
-8. Wickham H. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+1. Shumskaya M, Lorusso N, Patel U, Leigh M, Somervuo P, Schigel D (2023) MycoPins: a metabarcoding-based method to monitor fungal colonization of fine woody debris. Mycokeys: 77-95. (https://doi.org/10.3897/mycokeys.96.101033)
+2. Clemmensen KE, Ihrmark K, Durling MB, Lindahl BD (2016) Sample Preparation for Fungal Community Analysis by High-Throughput Sequencing of Barcode Amplicons.  Methods in Molecular Biology (Clifton, NJ). Humana Press: New York, NY, USA, 61-88. (https://doi.org/10.1007/978-1-4939-3369-3_4)
+3. Palmer JM, Jusino MA, Banik MT, Lindner DL (2018) Non-biological synthetic spike-in controls and the AMPtk software pipeline improve mycobiome data. Peerj 6: e4925. (https://doi.org/10.7717/peerj.4925)
+4. Abarenkov, K.; Zirk, A.; Piirmann, T.; Pöhönen, R.; Ivanov, F.; Nilsson, H.; Kõljalg, U.(2023): UNITE general FASTA release for Fungi 2. Version 18.07.2023. UNITE Community. (https://doi.org/10.15156/BIO/2938068)
+5. Põlme, S., Abarenkov, K., Henrik Nilsson, R., Lindahl, B. D., Clemmensen, K. E., Kauserud, H., Nguyen, N., Kjøller, R., Bates, S. T., Baldrian, P., Frøslev, T. G., Adojaan, K., Vizzini, A., Suija, A., Pfister, D., Baral, H. O., Järv, H., Madrid, H., ... Pradeep, C. K. (2020). FungalTraits: a user-friendly traits database of fungi and fungus-like stramenopiles. Fungal Diversity, 105(1), 1-16. (https://doi.org/10.1007/s13225-020-00466-2)
+6. Durling MB, Clemmensen KE, Stenlid J, Lindahl B (2011): SCATA - An efficient bioinformatic pipeline for species identification and quantification after high-throughput sequencing of tagged amplicons (submitted). (https://scata.mykopat.slu.se/)

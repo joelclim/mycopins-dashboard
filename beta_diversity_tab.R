@@ -131,7 +131,7 @@ betaDiversityTabServer <- function(id, transect, species) {
     updateCheckboxGroupInput(session,
                              "permanova_predictors",
                              choices = predictor_variables,
-                             selected = c("Days.Elapsed", "Season", "Wood.Type"))
+                             selected = c("Days.Elapsed", "Season", "Wood.Type", "avgtemp", "avghumidity"))
 
     observe({
       selectedPanel <- input$betaDiversityNavBar

@@ -62,6 +62,9 @@ server = shinyServer(function(input, output, session) {
   
   output$menuItems <- renderMenu({
     sidebarMenu({
+      query <- parseQueryString(session$clientData$url_search)
+      parameter <- paste(names(query), query, sep = '=', collapse = ', ')
+      
       if (logged_in()) {
         tagList (
           # See https://shiny.posit.co/r/reference/shiny/0.12.0/icon.html for icons list
@@ -75,11 +78,16 @@ server = shinyServer(function(input, output, session) {
       } else {
         tagList (
           # See https://shiny.posit.co/r/reference/shiny/0.12.0/icon.html for icons list
-          menuItem("Alpha Diversity", tabName = "alphaDiversity", icon = icon("chart-simple")),
-          menuItem("Beta Diversity", tabName = "betaDiversity", icon = icon("circle-nodes")),
-          menuItem("Indicator Species Analysis", tabName = "indicatorSpecies", icon = icon("chart-column")),
-          menuItem("Glossary", tabName = "glossary", icon = icon("book")),
-          menuItem("References", tabName = "references", icon = icon("location-arrow")),
+          menuItem("Alpha Diversity", tabName = "alphaDiversity", icon = icon("chart-simple"),
+                   selected = grepl("menuitem=alphaDiversity", parameter, ignore.case = TRUE)),
+          menuItem("Beta Diversity", tabName = "betaDiversity", icon = icon("circle-nodes"),
+                   selected = grepl("menuitem=betaDiversity", parameter, ignore.case = TRUE)),
+          menuItem("Indicator Species Analysis", tabName = "indicatorSpecies", icon = icon("chart-column"),
+                   selected = grepl("menuitem=indicatorSpecies", parameter, ignore.case = TRUE)),
+          menuItem("Glossary", tabName = "glossary", icon = icon("book"),
+                   selected = grepl("menuitem=glossary", parameter, ignore.case = TRUE)),
+          menuItem("References", tabName = "references", icon = icon("location-arrow"),
+                   selected = grepl("menuitem=references", parameter, ignore.case = TRUE)),
         )
       }
     })
